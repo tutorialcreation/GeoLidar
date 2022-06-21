@@ -20,4 +20,4 @@ def count_occurence(a_list:list)->dict:
     return empty_dict
     
 if __name__ == '__main__':
-    data = [0,0,9,0,8,9,0,7]
+    data = [0,0,9,0,8,9,0,6]
