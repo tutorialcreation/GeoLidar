@@ -12,8 +12,8 @@ requirements = ['pandas>=1.1.0', 'numpy>=1.19.0', ]
 test_requirements = ['pytest>=3', ]
 
 setup(
-    author="10 Academy",
-    email="train@10academy.org",
+    author="Martin Luther Bironga",
+    email="tutorialcreation81@gmail.com",
     python_requires='>=3.6',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -23,17 +23,19 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
-    description="A Repository structure for all your project",
+    description="A package that helps interact with lidar data from satelites",
     install_requires=requirements,
     long_description=readme,
     include_package_data=True,
     keywords='scripts',
-    name='scripts',
+    name='geolidar',
     packages=find_packages(include=['scripts', 'scripts.*']),
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/10xac/PythonPackageStructure',
-    version='0.1.0',
+    version='0.0.1',
     zip_safe=False,
 )
