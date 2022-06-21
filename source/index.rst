@@ -5,10 +5,13 @@
 
 Welcome to geolidar's documentation!
 ====================================
+To learn how to install it go :ref:`here<setup>`
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   setup
 
 
 
