@@ -7,7 +7,10 @@ from setuptools import setup, find_packages
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-requirements = ['pandas>=1.1.0', 'numpy>=1.19.0', ]
+requirements = [
+    'pandas>=1.1.0', 
+    'numpy>=1.19.0', 
+]
 
 test_requirements = ['pytest>=3', ]
 
@@ -36,6 +39,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/10xac/PythonPackageStructure',
-    version='0.0.2',
+    version='0.0.3',
     zip_safe=False,
 )
