@@ -24,7 +24,7 @@ def count_occurence(a_list:list)->dict:
         else:
             empty_dict[i] = 1
     return empty_dict
-    
+
 def load_geolidar(boundary,state,filename):
     pipeline = {
         "pipeline": [
