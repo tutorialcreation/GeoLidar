@@ -4,7 +4,7 @@ import laspy
 import pdal
 import json,os,subprocess,sys
 import pandas as pd
-from utils import path_to_json
+from .utils import path_to_json
 
 class Loader(object):
     def __init__(self) -> None:
