@@ -1,10 +1,10 @@
 import subprocess
 
-class runner:
+class Runner:
     def __init__(self) -> None:
         pass
 
-    def run_command(cmd_and_args, print_constantly=False, cwd=None):
+    def run_command(self,cmd_and_args, print_constantly=False, cwd=None):
         """Runs a system command.
 
         :param cmd_and_args: the command to run with or without a Pipe (|).
@@ -28,3 +28,5 @@ class runner:
         error = process.communicate()[1]
 
         return process.returncode, output, error
+
+runner = Runner()
