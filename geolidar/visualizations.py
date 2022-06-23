@@ -44,9 +44,24 @@ class Visualization(object):
         plt.show()
 
     
+    def plot_2d_heatmap(self,df,column,title):
+        """
+        plot a 2d heat map of the terrain
+        args:
+            df (geopndas df): a geopandas dataframe demonstrating the data
+            column (str): input column to outline in string
+            title (str): input title of the map in string
+        return:
+            2d heat map of terrain
+        """
+        fig, ax = plt.subplots(1, 1, figsize=(12, 10))
+        fig.patch.set_alpha(0)
+        plt.grid('on', zorder=0)
+        df.plot(column=column, ax=ax, legend=True, cmap="terrain")
+        plt.title(title)
+        plt.xlabel('long')
+        plt.ylabel('lat')
+        plt.show()
     
-    
-        
-        
 
 visualize = Visualization()
