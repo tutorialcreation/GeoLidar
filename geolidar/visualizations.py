@@ -44,6 +44,29 @@ class Visualization(object):
         plt.show()
 
     
+    def plot_3d_map(results):
+        """
+        plotting of a 3d map
+        args: 
+            results (list): input a python list of tuples in the form of (X,Y,Z)
+        return:
+            3d plot of the input points
+        """
+        # set data        
+        X = np.array([x[0] for x in results])
+        Y = np.array([x[1] for x in results])
+        Z = np.array([x[2] for x in results])
+
+        # plot data
+        fig, ax = plt.subplots(1, 1, figsize=(8, 6))
+        fig.set_size_inches(18.5, 10.5, forward=True)
+        ax = plt.axes(projection='3d')
+        ax.scatter(X, Y, Z, s=0.01,color="green")
+        ax.set_xlabel('long')
+        ax.set_ylabel('lat')
+        ax.set_zlabel('elevation')
+        plt.show()
+
     def plot_2d_heatmap(self,df,column,title):
         """
         plot a 2d heat map of the terrain
@@ -63,5 +86,7 @@ class Visualization(object):
         plt.ylabel('lat')
         plt.show()
     
+
+
 
 visualize = Visualization()
