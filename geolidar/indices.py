@@ -14,6 +14,9 @@ class Indexer(object):
         pass
 
     def wrap(self, deg):
+        """
+        these wraps around the longitude and latitude
+        """
         while deg < -180:
             deg += 360
         while deg > 180:
