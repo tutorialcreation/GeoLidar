@@ -13,7 +13,7 @@ class Indexer(object):
     def __init__(self) -> None:
         pass
 
-    def wrap(deg):
+    def wrap(self, deg):
         while deg < -180:
             deg += 360
         while deg > 180:
@@ -51,7 +51,7 @@ class Indexer(object):
         l = len(ring)
         k = l - 1
         while j < l:
-            sumVal += wrap(ring[j][0] - ring[k][0]) * (ring[j][1] + ring[k][1])
+            sumVal += self.wrap(ring[j][0] - ring[k][0]) * (ring[j][1] + ring[k][1])
             k = j
             j += 1
 
@@ -63,8 +63,8 @@ class Indexer(object):
         x = [(long[i],lat[i])for i in range(len(long))]
         area_poly = self.area(results)
         twindex = []
-        for i in x:
-            slope = np.gradient(x[0])[0]
+        for i,_ in enumerate(x):
+            slope = np.gradient(x[i])[0]
             twindex.append(np.log(area_poly/math.tan(slope)))
 
         gdf['twi'] = twindex
