@@ -24,6 +24,8 @@ jobs:
         with:
           auto-update-conda: true
           python-version: ${{ matrix.python-version }}
+      - name: Check where we are
+        run: ls
       - name: Conda install
         run: conda install --file spec-file.txt 
       - name: Conda list
