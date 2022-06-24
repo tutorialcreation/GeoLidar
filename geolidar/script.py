@@ -31,16 +31,20 @@ class Loader(object):
         return empty_dict
 
     def load_geolidar(self,boundary,state,filename):
+
         """
         a quick test for loading geolidar data
+
         args:
             boundary (tuple): these are coordinates in the form of latitude and longitude
             state (str): this argument inputs the region one wants to return raster from
             filename(str): this outlines the name you want to give your raster
+       
         returns:
             gpd (geopandas Dataframe): returns a geopandas dataframe
-    
+
         """
+
         pipeline = {
             "pipeline": [
                 {
@@ -118,8 +122,10 @@ class Loader(object):
             filename (str): name of the file you want to save
             region (str): region intended to create gdf from
             espg (int): get the crs format
+        
         returns 
             pdal pipeline
+        
         """
         with open(path_to_json(region)) as json_file:
             json_obj = json.load(json_file)

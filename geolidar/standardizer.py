@@ -10,9 +10,12 @@ class Standardizer(object):
 
     def by_distance(self,distance,results):
         """
+
         interpolate data by elevation from distance to grid
+        
         args: 
             distance (int): distance between the spaces
+        
         return:
             list of tuples in the format (X,Y,Z)
         """

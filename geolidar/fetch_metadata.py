@@ -10,11 +10,15 @@ class Fetch:
 
     def fetch_metadata(filename):
         """
+
         extracts metadata from the public usgs lidar url 
+        
         args: str 
             filename - this is where you will save your file data
+        
         return: df
             returns a dataframe containing the metadata specified
+        
         """
         data = []
         

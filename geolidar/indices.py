@@ -8,9 +8,12 @@ class Indexer(object):
 
     def wrap(self, deg):
         """
+        
         these wraps around the longitude and latitude
+        
         args:
             deg (int): the latitude/longitude in degrees
+        
         returns:
             deg in integer format
         """
@@ -22,11 +25,15 @@ class Indexer(object):
     
     def area(self,results):
         """
+        
         calculate the area in square meters given the latitude and longitude
+        
         args:
             results (list): list of tuples in the format (X,Y,Z)
+        
         returns:
             area (float)
+        
         """
         long = [x[0] for x in results]
         lat = [x[1] for x in results]
@@ -62,12 +69,16 @@ class Indexer(object):
     
     def get_topographical_wetness_index(self,results,gdf):
         """
+        
         calculates the topographical wetness index using the log formula
+        
         args:
             result (list): a list of tuples in the format (X,Y,Z)
             gdf (geopandas dataframe): a geopandas dataframe containing latitude, longitude and elevation information
+        
         return:
             gdf (geopandas dataframe): that contains the twi column
+        
         """
         long = [x[0] for x in results]
         lat = [x[1] for x in results]

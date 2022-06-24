@@ -7,11 +7,14 @@ Welcome to geolidar's documentation!
 ====================================
 To learn how to install it go :ref:`here<setup>`
 
+An in depth documentation of the functions and methods can be found :ref:`here<package>`
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    setup
+   package
 
 
 
