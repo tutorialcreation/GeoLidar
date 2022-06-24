@@ -8,10 +8,7 @@
 sphinx
 wheel
 #pdal
-geopandas
 pandas
 numpy
-python-pdal
-geoplot
 # pyvis
 # datashader
