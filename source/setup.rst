@@ -6,4 +6,5 @@ In this section I will teach you how to install the geolidar package.
 
 Installation
 ------------
-pip install geolidar
+:code:`pip install geolidar`
+

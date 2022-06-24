@@ -2,7 +2,7 @@ import unittest
 import sys, os
 sys.path.append(os.path.abspath(os.path.join('..')))
 
-from geolidar.script import find_average, count_occurence
+from geolidar import loader
 
 
 class TestCases(unittest.TestCase):
@@ -11,7 +11,7 @@ class TestCases(unittest.TestCase):
         Test that it retunrs the average of a given list
         """
         data = [1, 2, 3]
-        result = find_average(data)
+        result = loader.find_average(data)
         self.assertEqual(result, 2.0)
 
     def test_input_value(self):
@@ -19,7 +19,7 @@ class TestCases(unittest.TestCase):
         Provide an assertion level for arg input
         """
         
-        self.assertRaises(TypeError, find_average, True)
+        self.assertRaises(TypeError, loader.find_average, True)
 
 class TestCountOccurence(unittest.TestCase):
     def test_count_occurence(self):
@@ -27,7 +27,7 @@ class TestCountOccurence(unittest.TestCase):
         Test that it returns the count of each unique values in the given list
         """
         data = [0,0,9,0,8,9,0,7]
-        result = count_occurence(data)
+        result = loader.count_occurence(data)
         output = {0: 4, 9: 2, 8: 1, 7: 1}
         self.assertAlmostEqual(result, output)
 
@@ -35,7 +35,7 @@ class TestCountOccurence(unittest.TestCase):
         """
         Provide an assertion level for arg input
         """
-        self.assertRaises(TypeError, count_occurence, True)
+        self.assertRaises(TypeError, loader.count_occurence, True)
 
 if __name__ == '__main__':
     unittest.main()

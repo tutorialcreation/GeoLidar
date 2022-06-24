@@ -16,6 +16,9 @@
 
 
 # -- Project information -----------------------------------------------------
+import os,sys
+sys.path.append(os.path.abspath(os.path.join('..')))
+print(sys.path)
 
 project = 'geolidar'
 copyright = '2022, Martin Luther Bironga'
@@ -31,6 +34,9 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
