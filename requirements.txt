@@ -11,6 +11,7 @@ wheel
 geopandas
 pandas
 numpy
+python-pdal
 # geoplot
 # pyvis
 # datashader

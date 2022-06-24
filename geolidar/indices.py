@@ -1,13 +1,6 @@
 import numpy as np
-import geopandas as gpd
-import pandas as pd
-from scipy.interpolate import griddata
 import math
-import pyproj    
-import shapely
-import shapely.ops as ops
 from shapely.geometry.polygon import Polygon
-from functools import partial
 
 class Indexer(object):
     def __init__(self) -> None:
@@ -16,6 +9,10 @@ class Indexer(object):
     def wrap(self, deg):
         """
         these wraps around the longitude and latitude
+        args:
+            deg (int): the latitude/longitude in degrees
+        returns:
+            deg in integer format
         """
         while deg < -180:
             deg += 360
@@ -24,8 +21,13 @@ class Indexer(object):
         return deg
     
     def area(self,results):
-        ## Setup from:
-        ## https://github.com/mapbox/cheap-ruler/blob/48ad4768a52dc176b01494d090cce19f02c7afdd/index.js#L71-L82
+        """
+        calculate the area in square meters given the latitude and longitude
+        args:
+            results (list): list of tuples in the format (X,Y,Z)
+        returns:
+            area (float)
+        """
         long = [x[0] for x in results]
         lat = [x[1] for x in results]
         x = [(long[i],lat[i])for i in range(len(long))]
@@ -45,8 +47,6 @@ class Indexer(object):
         kx = m * w * coslat
         ky = m * w * w2 * (1 - E2)
 
-        ## Area calc from:
-        ## https://github.com/mapbox/cheap-ruler/blob/48ad4768a52dc176b01494d090cce19f02c7afdd/index.js#L185-L197
         ring = geom.exterior.coords
 
         sumVal = 0
@@ -61,6 +61,14 @@ class Indexer(object):
         return (abs(sumVal) / 2) * kx * ky;
     
     def get_topographical_wetness_index(self,results,gdf):
+        """
+        calculates the topographical wetness index using the log formula
+        args:
+            result (list): a list of tuples in the format (X,Y,Z)
+            gdf (geopandas dataframe): a geopandas dataframe containing latitude, longitude and elevation information
+        return:
+            gdf (geopandas dataframe): that contains the twi column
+        """
         long = [x[0] for x in results]
         lat = [x[1] for x in results]
         x = [(long[i],lat[i])for i in range(len(long))]
