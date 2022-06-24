@@ -30,8 +30,8 @@ jobs:
       - name: Check where we are
         run: ls
       - name: Conda install
-        run: conda install --file spec-file.txt
+        run: conda install --name geolidar --file spec-file.txt
       - name: Test with pytest
-        run: python -m unittest discover tests/
+        run: conda activate geolidar && python -m unittest discover tests/
 
 
