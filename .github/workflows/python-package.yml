@@ -32,6 +32,6 @@ jobs:
       - name: Conda install
         run: conda install --name geolidar --file spec-file.txt
       - name: Test with pytest
-        run: conda activate geolidar && python -m unittest discover tests/
+        run: python -m unittest discover tests/
 
 
