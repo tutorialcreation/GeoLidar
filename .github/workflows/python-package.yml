@@ -27,7 +27,7 @@ jobs:
       - name: Check where we are
         run: ls
       - name: Conda install
-        run: conda install --file spec-file.txt 
+        run: conda install --file ../../spec-file.txt 
       - name: Conda list
         shell: pwsh
         run: conda list
