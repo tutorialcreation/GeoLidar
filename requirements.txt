@@ -12,6 +12,6 @@ geopandas
 pandas
 numpy
 python-pdal
-# geoplot
+geoplot
 # pyvis
 # datashader

@@ -28,7 +28,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f requirements.txt ]; then conda create -y --name py37 python=3.7 &&
+        conda install --force-reinstall -y -q --name py37 -c conda-forge --file requirements.txt &&
+        conda activate py37; fi
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
