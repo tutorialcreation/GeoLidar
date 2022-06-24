@@ -25,9 +25,7 @@ jobs:
           auto-update-conda: true
           python-version: ${{ matrix.python-version }}
       - name: Conda info
-        shell: bash -l {0}
-        run: |
-        conda install --force-reinstall -y -c conda-forge --file requirements.txt 
+        run: conda install --force-reinstall -y -c conda-forge --file requirements.txt 
       - name: Conda list
         shell: pwsh
         run: conda list
