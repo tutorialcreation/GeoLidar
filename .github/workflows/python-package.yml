@@ -27,9 +27,7 @@ jobs:
       - name: Conda info
         shell: bash -l {0}
         run: |
-        if [ -f requirements.txt ]; then conda create -y --name py37 python=3.7 &&
-        conda install --force-reinstall -y -q --name py37 -c conda-forge --file requirements.txt &&
-        conda activate py37; fi
+        conda install --force-reinstall -y -c conda-forge --file requirements.txt 
       - name: Conda list
         shell: pwsh
         run: conda list
