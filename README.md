@@ -17,7 +17,7 @@ pip install geolidar
 
 * using conda
 ```python
-conda install -c conda-forge geolidar
+conda install -c martin_nyambane geolidar
 ```
 
 ## Usage
