@@ -10,6 +10,7 @@ with open('README.md') as readme_file:
 requirements = [
     'pandas>=1.1.0', 
     'numpy>=1.19.0', 
+    'geopandas',
 ]
 
 test_requirements = ['pytest>=3', ]
