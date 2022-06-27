@@ -21,8 +21,10 @@ pip install geolidar
 Loading geolidar data has been an old age challenge, and we shall be using this tool to load data from the lidar cloud, there are only two things that you need to know over here, first is the state/region variable, and second you need to have your coordinates ready, and the file which you want to save your resulting raster.
 
 ```python
+import geopandas as gpd
 from geolidar import loader
 from geolidar.mapper import state_mapper_variables
 
-geo_df = loader.load_geolidar(([-10425171.940, -10423171.940], [5164494.710, 5166494.710]),state_mapper_variables.IA_FullState,"../data/iowa")
+gdf = gpd.read_csv("../data/iowa.csv")
+geo_df = loader.load_geolidar(gdf.bounds,state_mapper_variables.IA_FullState,"../data/iowa")
 ```

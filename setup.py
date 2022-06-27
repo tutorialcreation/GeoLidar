@@ -10,6 +10,7 @@ with open('README.md') as readme_file:
 requirements = [
     'pandas>=1.1.0', 
     'numpy>=1.19.0', 
+    'geopandas',
 ]
 
 test_requirements = ['pytest>=3', ]
@@ -39,6 +40,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/10xac/PythonPackageStructure',
-    version='0.0.3',
+    version='0.0.4',
     zip_safe=False,
 )
