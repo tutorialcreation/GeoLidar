@@ -41,3 +41,11 @@ gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy([x[1] for x in results],
 
 geo_df = loader.load_geolidar(boundary = gdf.bounds,state=state_mapper_variables.IA_FullState,filename="../data/iowa",esp_output=3857)
 ```
+
+## Further usage
+
+If you want to checkout a quick synopsis of the major functions you can go to the notebooks folder, the GeoLidar.ipynb
+
+```python
+furtherUsage => notebooks/GeoLidar.ipynb
+```

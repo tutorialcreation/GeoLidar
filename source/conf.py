@@ -25,7 +25,7 @@ copyright = '2022, Martin Luther Bironga'
 author = 'Martin Luther Bironga'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.0.4'
 
 
 # -- General configuration ---------------------------------------------------
