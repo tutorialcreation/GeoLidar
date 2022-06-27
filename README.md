@@ -15,6 +15,11 @@ In order to install geolidar, you need to have pip installed and an active virtu
 pip install geolidar
 ```
 
+* using conda
+```python
+conda install -c conda-forge geolidar
+```
+
 ## Usage
 ### Loading lidar data
 
@@ -25,6 +30,14 @@ import geopandas as gpd
 from geolidar import loader
 from geolidar.mapper import state_mapper_variables
 
-gdf = gpd.read_csv("../data/iowa.csv")
-geo_df = loader.load_geolidar(gdf.bounds,state_mapper_variables.IA_FullState,"../data/iowa")
+pipeline=pdal.Reader(f'{filename}.laz').pipeline()
+count = pipeline.execute()
+arrays = pipeline.arrays
+captured_array = arrays.pop()
+results = [captured_array[['X','Y','Z']][i] for i,x in enumerate(captured_array)]
+df = pd.DataFrame({'elevation_m': [x[2] for x in results],'bounds':pipeline.bounds})
+gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy([x[1] for x in results], 
+                                                        [x[0] for x in results]))
+
+geo_df = loader.load_geolidar(boundary = gdf.bounds,state=state_mapper_variables.IA_FullState,filename="../data/iowa",esp_output=3857)
 ```
